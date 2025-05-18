@@ -20,29 +20,26 @@ const App = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
- 
-      {!isAgencyRoute  && <Navbar />}
+      {!isAgencyRoute && <Navbar />}
       
       <div className="flex flex-1">
-     
         {isDashboardRoute && <CitizenService />}
         
-     
-        <div className="flex-1">
+        <div className={`flex-1 ${isDashboardRoute ? 'md:ml-64' : ''}`}>
           <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/login" element={<Login />} />
-  <Route path="/government_agency" element={<Govermentagency />} />
-  <Route path="/signup" element={<Signup />} />
-  <Route path="/tracking" element={<TrackingComplaints/>}/>
-  <Route path="/help" element={<HelpAndSupport/>}/>
-  <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/government_agency" element={<Govermentagency />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/tracking" element={<TrackingComplaints/>}/>
+            <Route path="/help" element={<HelpAndSupport/>}/>
+            <Route path="/dashboard/*" element={<Dashboard />} />
 
-  <Route path="/agency/*" element={<AgencyLayout />}>
-    <Route path="dashboard" element={<Agencymaindashbord />} />
-    <Route path="complaints" element={<AgencyComplaints />} />
-  </Route>
-</Routes>
+            <Route path="/agency/*" element={<AgencyLayout />}>
+              <Route path="dashboard" element={<Agencymaindashbord />} />
+              <Route path="complaints" element={<AgencyComplaints />} />
+            </Route>
+          </Routes>
         </div>
       </div>
     </div>

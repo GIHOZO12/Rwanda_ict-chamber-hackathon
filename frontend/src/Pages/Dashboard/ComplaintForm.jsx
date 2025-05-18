@@ -189,7 +189,7 @@ const ComplaintForm = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md md:mx-2">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Submit a New Complaint</h2>
       
       {submitMessage && (
