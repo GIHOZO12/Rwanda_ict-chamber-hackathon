@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
         const response = await axios.post(
-            " ngewe.pythonanywhere.com/api/login/", 
+            "https://ngewe.pythonanywhere.com/api/login/", 
             {
                 email: formData.email,
                 password: formData.password
