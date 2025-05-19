@@ -64,7 +64,7 @@ const TrackingComplaints = () => {
     
     try {
       // Use the combined endpoint we created in the backend
-      const res = await axios.get(`http://127.0.0.1:8000/api/track-complaint/${ticketNumber}/`);
+      const res = await axios.get(`https://ngewe.pythonanywhere.com/api/track-complaint/${ticketNumber}/`);
       setComplaint(res.data);
       setResponses(res.data.responses || []);
       
