@@ -24,7 +24,7 @@ const Navbar = () => {
         const token = Cookies.get('access');
         if (!token) return;
 
-        axios.get("http://127.0.0.1:8000/api/current_user/", {
+        axios.get("https://ngewe.pythonanywhere.com/api/current_user/", {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -46,7 +46,7 @@ const Navbar = () => {
             return;
         }
 
-        axios.post("http://127.0.0.1:8000/api/logout/", 
+        axios.post("https://ngewe.pythonanywhere.com/api/logout/", 
             { refresh: refreshToken }, 
             {
                 headers: {

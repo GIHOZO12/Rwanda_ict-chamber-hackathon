@@ -26,7 +26,7 @@ const ComplaintForm = () => {
   
   // Load provinces on mount
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/provinces/')
+    axios.get('https://ngewe.pythonanywhere.com/api/provinces/')
       .then(res => setProvinces(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -41,7 +41,7 @@ const ComplaintForm = () => {
 
   useEffect(() => {
     if (selectedProvince) {
-      axios.get(`http://127.0.0.1:8000/api/provinces/${selectedProvince}/districts/`)
+      axios.get(`https://ngewe.pythonanywhere.com/api/provinces/${selectedProvince}/districts/`)
         .then(res => {
           setDistricts(res.data);
           setSelectedDistrict(null);
@@ -58,7 +58,7 @@ const ComplaintForm = () => {
 
   useEffect(() => {
     if (selectedDistrict) {
-      axios.get(`http://127.0.0.1:8000/api/districts/${selectedDistrict}/sectors/`)
+      axios.get(`https://ngewe.pythonanywhere.com/api/districts/${selectedDistrict}/sectors/`)
         .then(res => {
           setSectors(res.data);
           setSelectedSector(null);
@@ -74,7 +74,7 @@ const ComplaintForm = () => {
 
   useEffect(() => {
     if (selectedSector) {
-      axios.get(`http://127.0.0.1:8000/api/sectors/${selectedSector}/cells/`)
+      axios.get(`https://ngewe.pythonanywhere.com/api/sectors/${selectedSector}/cells/`)
         .then(res => {
           setCells(res.data);
           setSelectedCell(null);
@@ -89,7 +89,7 @@ const ComplaintForm = () => {
 
   useEffect(() => {
     if (selectedCell) {
-      axios.get(`http://127.0.0.1:8000/api/cells/${selectedCell}/villages/`)
+      axios.get(`https://ngewe.pythonanywhere.com/api/cells/${selectedCell}/villages/`)
         .then(res => {
           setVillages(res.data);
           setFormData(prev => ({ ...prev, location_id: null }));
@@ -135,7 +135,7 @@ const ComplaintForm = () => {
       }
 
       const response = await axios.post(
-        'http://127.0.0.1:8000/api/complaints/', 
+        'https://ngewe.pythonanywhere.com/api/complaints/', 
         dataToSend,
         {
           headers: {

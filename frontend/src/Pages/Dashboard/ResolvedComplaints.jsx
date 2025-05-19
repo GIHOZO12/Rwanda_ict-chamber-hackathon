@@ -16,7 +16,7 @@ const ResolvedComplaints = () => {
       try {
         const token = Cookies.get('access_token');
         const response = await axios.get(
-          'http://127.0.0.1:8000/api/my-responses/',
+          'https://ngewe.pythonanywhere.com/api/my-responses/',
           {
             headers: {
               'Authorization': `Bearer ${token}`

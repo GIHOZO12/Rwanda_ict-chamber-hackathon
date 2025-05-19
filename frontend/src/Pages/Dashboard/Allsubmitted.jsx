@@ -12,7 +12,7 @@ const AllSubmitted = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/my-complaints/', {
+        const response = await axios.get('https://ngewe.pythonanywhere.com/api/my-complaints/', {
           headers: {
             'Authorization': `Bearer ${Cookies.get('access')}`
           }

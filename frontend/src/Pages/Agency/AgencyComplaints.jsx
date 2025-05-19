@@ -37,7 +37,7 @@ const AgencyComplaints = () => {
         if (filter.search) params.append('search', filter.search);
 
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/agency/complaints/?${params.toString()}`,
+          `https://ngewe.pythonanywhere.com/api/agency/complaints/?${params.toString()}`,
           {
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -70,7 +70,7 @@ const AgencyComplaints = () => {
     try {
       const token = Cookies.get('access_token');
       await axios.patch(
-        `http://127.0.0.1:8000/api/agency/complaints/${complaintId}/`,
+        `https://ngewe.pythonanywhere.com/api/agency/complaints/${complaintId}/`,
         { status: newStatus },
         {
           headers: {
@@ -117,7 +117,7 @@ const AgencyComplaints = () => {
 
     
     const response = await axios.post(
-      `http://127.0.0.1:8000/api/citizen/response/${selectedComplaint.id}/`,
+      `https://ngewe.pythonanywhere.com/api/citizen/response/${selectedComplaint.id}/`,
       {
         message: responseText,
         is_public: isPublic

@@ -18,7 +18,7 @@ const AgencyDashboard = () => {
           return;
         }
 
-        const response = await axios.get('http://127.0.0.1:8000/api/agency/dashboard/', {
+        const response = await axios.get('https://ngewe.pythonanywhere.com/api/agency/dashboard/', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

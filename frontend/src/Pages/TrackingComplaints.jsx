@@ -39,7 +39,7 @@ const TrackingComplaints = () => {
   useEffect(() => {
     const fetchRecentComplaints = async () => {
       try {
-        const res = await axios.get('http://127.0.0.1:8000/api/my-complaints/?limit=5');
+        const res = await axios.get('https://ngewe.pythonanywhere.com/api/my-complaints/?limit=5');
         setRecentComplaints(res.data);
       } catch (err) {
         console.error('Failed to fetch recent complaints', err);
